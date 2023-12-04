@@ -17,14 +17,18 @@ let userSchema = new mongoose.Schema({
      },
     age:Number,
     description:String,  
-    gender:String,
-    username:{type:String, unique:true},//unique
+    gender: {
+        type: String,
+        enum: ['male', 'female', 'other']
+     },
+    username:{type:String, unique:true},
     img_url:String,
     interests:{
         type:[String],
         required:true
     },
     rating:Number,
-    address:String,
-    
+    address:String
 })
+
+exports.UserModel = mongoose.model("users",userSchema)

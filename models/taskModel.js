@@ -31,4 +31,4 @@ let taskSchema = new mongoose.Schema({
     taken:Boolean
 })
 
-exports.UserModel = mongoose.model("users",userSchema)
+exports.UserModel = mongoose.model("tasks",userSchema)
